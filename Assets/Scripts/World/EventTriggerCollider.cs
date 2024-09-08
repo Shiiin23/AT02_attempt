@@ -26,15 +26,25 @@ public class EventTriggerCollider : MonoBehaviour, ILoggable
     [SerializeField] protected bool oneShot = true;
     [Tooltip("Defines the functions that will be executed upon a trigger collision event.")]
     [SerializeField] private UnityEvent triggerEvents;
+    [SerializeField] private Transform corpsepoint;
 
+    private PlayerController player;
+
+    private void Awake()
+    {
+        player = FindObjectOfType<PlayerController>();
+        Debug.Log("HOY");
+    }
+    
     /// <summary>
     /// OnTriggerEnter is called when a foreign collider collides with this object's collider, if isTrigger is true.
     /// </summary>
     /// <param name="other">Stores a reference to the foreign collider that has entered the trigger collider.</param>
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player") == true)
+        if (other.CompareTag("Player") == true)
         {
+            GetComponent<PlayerController>().TeleportToPosition(corpsepoint.position);  
             triggerEvents.Invoke();
             if (oneShot == true)
             {

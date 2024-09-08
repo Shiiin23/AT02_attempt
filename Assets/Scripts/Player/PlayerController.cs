@@ -41,6 +41,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 motionFrameStep;
     private CharacterController controller;
     private AudioSource aSrc;
+    private PlayerController player;
 
     /// <summary>
     /// Enables/disables the ability to move the player character by device input.
@@ -99,7 +100,7 @@ public class PlayerController : MonoBehaviour
                 Log($"{gameObject.name} requires an Audio Source component!", 1);
             }
         }
-        else if(Instance != this)
+        else if (Instance != this)
         {
             gameObject.SetActive(false);
         }
@@ -157,7 +158,7 @@ public class PlayerController : MonoBehaviour
             if (controller != null && controller.isGrounded == true && Input.GetButtonDown("Jump") == true)
             {
                 velocity = jumpForce;
-                if(aSrc != null && jumpClips.Length > 0)
+                if (aSrc != null && jumpClips.Length > 0)
                 {
                     aSrc.PlayOneShot(jumpClips[Random.Range(0, jumpClips.Length)]);
                 }
@@ -186,6 +187,14 @@ public class PlayerController : MonoBehaviour
             motionFrameStep.y += velocity;
             controller.Move(motionFrameStep * Time.deltaTime);
         }
+    }
+
+    //teleports player when colliding with trigger, which will stop movement until player is teleported
+    public void TeleportToPostion(Vector3 position)
+    {
+        controller.enabled = false;
+        transform.position = position;
+        controller.enabled = true;
     }
 
     /// <summary>

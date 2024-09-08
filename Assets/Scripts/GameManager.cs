@@ -36,6 +36,12 @@ public class GameManager : MonoBehaviour, ILoggable
     [SerializeField][TextArea] private string authorCardText;
 
     private int gameState = 0;
+    private PlayerController player;
+
+    private void Awake()
+    {
+        player = FindObjectOfType<PlayerController>();
+    }
 
     /// <summary>
     /// Static event called when the player completes the game.
@@ -49,6 +55,8 @@ public class GameManager : MonoBehaviour, ILoggable
     /// Static event called at the end of the game when the player completes the game.
     /// </summary>
     public static event AuthorCardDelegate AuthorCardEvent = delegate { };
+    
+
 
     /// <summary>
     /// Update is called once per frame.
