@@ -190,7 +190,7 @@ public class PlayerController : MonoBehaviour
     }
 
     //teleports player when colliding with trigger, which will stop movement until player is teleported
-    public void TeleportToPostion(Vector3 position)
+    public void TeleportToPosition(Vector3 position)
     {
         controller.enabled = false;
         transform.position = position;
