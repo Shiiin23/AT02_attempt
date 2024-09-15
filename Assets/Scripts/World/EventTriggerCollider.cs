@@ -27,9 +27,9 @@ public class EventTriggerCollider : MonoBehaviour, ILoggable
     [Tooltip("Defines the functions that will be executed upon a trigger collision event.")]
     [SerializeField] private UnityEvent triggerEvents;
     [SerializeField] private Transform corpsepoint;
-   
 
-    
+
+
     private GameManager manager;
     //private CharacterController controller;
     private void Awake()
@@ -38,7 +38,7 @@ public class EventTriggerCollider : MonoBehaviour, ILoggable
         Debug.Log("HOY");
     }
 
-    
+
 
 
     //public void TeleportToPostion(Vector3 position)
@@ -53,14 +53,18 @@ public class EventTriggerCollider : MonoBehaviour, ILoggable
     /// <param name="other">Stores a reference to the foreign collider that has entered the trigger collider.</param>
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") == true)
+        triggerEvents.Invoke();
+        if (oneShot == true)
         {
+            GetComponent<Collider>().enabled = false;
             
-            triggerEvents.Invoke();
-            if (oneShot == true)
+        }
+        else if (oneShot == false)
+        {
+            if (other.CompareTag("Player") == true)
             {
                 other.GetComponent<PlayerController>().TeleportToPosition(corpsepoint.position);
-                GetComponent<Collider>().enabled = false;
+
             }
         }
     }
