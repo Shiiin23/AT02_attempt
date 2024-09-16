@@ -28,11 +28,6 @@ public class EventTriggerCollider : MonoBehaviour, ILoggable
     [SerializeField] private UnityEvent triggerEvents;
     [SerializeField] private Transform corpsepoint;
 
-<<<<<<< Updated upstream
-
-
-=======
->>>>>>> Stashed changes
     private GameManager manager;
     //private CharacterController controller;
     private void Awake()
@@ -41,12 +36,6 @@ public class EventTriggerCollider : MonoBehaviour, ILoggable
         Debug.Log("HOY");
     }
 
-<<<<<<< Updated upstream
-
-
-
-=======
->>>>>>> Stashed changes
     //public void TeleportToPostion(Vector3 position)
     //{
     //    controller.enabled = false;
@@ -62,25 +51,19 @@ public class EventTriggerCollider : MonoBehaviour, ILoggable
         triggerEvents.Invoke();
         if (oneShot == true)
         {
-<<<<<<< Updated upstream
+
             GetComponent<Collider>().enabled = false;
             
         }
         else if (oneShot == false)
         {
             if (other.CompareTag("Player") == true)
-=======
-
-            triggerEvents.Invoke();
-            if (oneShot == true)
->>>>>>> Stashed changes
             {
                 other.GetComponent<PlayerController>().TeleportToPosition(corpsepoint.position);
-
             }
+            
         }
     }
-
     /// <summary>
     /// Logs a formatted debugging messaged to the console, of the warning level specified.
     /// </summary>
