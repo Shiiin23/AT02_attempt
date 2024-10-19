@@ -2458,8 +2458,8 @@ MonoBehaviour:
   openOnStart: 0
   lockGroup:
   - {fileID: 1384322842}
-  lockedInteractionClip: {fileID: 0}
-  lockedOnStart: 0
+  lockedInteractionClip: {fileID: 8300000, guid: 141d801bd57c9d24bb2b4430f2f8acb4, type: 3}
+  lockedOnStart: 1
 --- !u!65 &445537422
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5959,8 +5959,8 @@ MonoBehaviour:
   openOnStart: 0
   lockGroup:
   - {fileID: 1026210314}
-  lockedInteractionClip: {fileID: 0}
-  lockedOnStart: 0
+  lockedInteractionClip: {fileID: 8300000, guid: 141d801bd57c9d24bb2b4430f2f8acb4, type: 3}
+  lockedOnStart: 1
 --- !u!1 &900744384
 GameObject:
   m_ObjectHideFlags: 0
@@ -6915,7 +6915,7 @@ MonoBehaviour:
   openOnStart: 0
   lockGroup:
   - {fileID: 882084092}
-  lockedInteractionClip: {fileID: 0}
+  lockedInteractionClip: {fileID: 8300000, guid: 141d801bd57c9d24bb2b4430f2f8acb4, type: 3}
   lockedOnStart: 1
 --- !u!65 &1026210315
 BoxCollider:
@@ -9898,7 +9898,7 @@ MonoBehaviour:
   openOnStart: 0
   lockGroup:
   - {fileID: 445537421}
-  lockedInteractionClip: {fileID: 0}
+  lockedInteractionClip: {fileID: 8300000, guid: 141d801bd57c9d24bb2b4430f2f8acb4, type: 3}
   lockedOnStart: 1
 --- !u!65 &1384322843
 BoxCollider:
@@ -13460,7 +13460,7 @@ Transform:
   m_GameObject: {fileID: 1965633993}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 13.75, y: 0.75, z: 3.6599998}
+  m_LocalPosition: {x: 0.42000008, y: 0.75, z: 0.9000001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
