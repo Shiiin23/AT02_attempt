@@ -51,9 +51,9 @@ public class EventTriggerCollider : MonoBehaviour, ILoggable
         triggerEvents.Invoke();
         if (oneShot == true)
         {
-
-            GetComponent<Collider>().enabled = false;
             
+            GetComponent<Collider>().enabled = false;
+
         }
         else if (oneShot == false)
         {
@@ -61,7 +61,7 @@ public class EventTriggerCollider : MonoBehaviour, ILoggable
             {
                 other.GetComponent<PlayerController>().TeleportToPosition(corpsepoint.position);
             }
-            
+
         }
     }
     /// <summary>
@@ -92,3 +92,5 @@ public class EventTriggerCollider : MonoBehaviour, ILoggable
         }
     }
 }
+
+
